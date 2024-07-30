@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wise Profile</title>
+
+    <link rel="icon" href="logoXXL.png" type="image/x-icon">
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="darkmode.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="darkmode.css">
+    <script src="darkmode.js"></script>
+    <script src="profile.js"></script>
+    <script src="home.js"></script>
+
+  
+
+</head>
+
+<script src="https://widget.cxgenie.ai/widget.js" data-aid="39e5e315-d696-4bec-919f-a166b3516cf0" data-lang="en"></script>
+
+<body>
+
+
+    <nav class="navbar">
+        <div class="navbar-item" class="homelink"><a href="home.html" class="homelink">Wellness Wise</a></div>
+        <div class="navbar-links">
+            <a href="articles.html" class="navbar-link" id="articles">Articles</a>
+            <a href="dashboard.html" class="navbar-link" id="dashboard">Dashboard</a>
+            <a href="goals.html" class="navbar-link" id="goals">Goals</a>
+        </div>
+        <div class="dark-mode-toggle" id="dark-mode-toggle">
+            <span class="material-symbols-outlined" onclick="contrast()">contrast</span>
+        </div>
+        <div class="profile-icon">
+            <a class="material-symbols-outlined" style="text-decoration: none;" href="profile.html">account_circle</a>
+        </div>
+    </nav>
+
+    <nav class="mininav">
+        <ul style="background-color: black;" class="menuicon"> 
+            <li class="container" onclick="myFunction(this)">
+                <div class="bar1" style="margin-top: 10px;"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </li>
+            <li class="dark-mode-toggle" id="dark-mode-toggle">
+                <span class="material-symbols-outlined" onclick="contrast()">contrast</span>
+            </li>
+        </ul>
+
+        <ul class="minimenu">        
+            <li><a href="home.html" class="menulist">Home</a></li>
+            <li><a href="articles.html" class="menulist">Articles</a></li>
+            <li><a href="dashboard.html" class="menulist">Dashboard</a></li>
+            <li><a href="goals.html" class="menulist">Goals</a></li> 
+            <li><a href="profile.html" class="menulist">Profile</a></li> 
+
+        </ul>
+    </nav>
+
+<!-------------------------------------------------->
+
+    <div class="profilePage" >
+        <div class="profile-container">
+           
+             <div id="upper">
+                <img src="whiteicon.png" alt="user-icon" style="width:100% ;align-self: center">
+                
+             </div>
+            <div class="profile-info">
+                <p><strong>Username:</strong> <span id="profileUsername"></span></p>
+                <p><strong>Age:</strong> <span id="profileAge"></span></p>
+                <p><strong>Weight:</strong> <span id="profileWeight"></span></p>
+                <p><strong>Height:</strong> <span id="profileHeight"></span></p>
+                <p><strong>Gender:</strong> <span id="profileGender"></span></p>
+                <p><strong>Body Type Goal:</strong> <span id="profileBodyTypeGoal"></span></p>
+            </div>
+            <div>
+                <button  id="ActualLogOut" style=" all: unset; ;display: flex; background-color: saddlebrown; justify-self: center; width: 60%; 
+                 border: 2px solid #f9f9f9; margin: auto; justify-content: center; text-align: center; color: #f9f9f9; font-weight: bolder; border-radius: 10px; margin-bottom: 10px; " >
+                 Log Out
+                 </button>
+            </div>
+        </div>
+    </div>
+<!-------------------------------------------------->
+
+
+
+<script type="module">
+     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
+      
+       
+        const firebaseConfig = {
+          apiKey: "AIzaSyD7YKJDT-j70Ai_FKFWMim0Ltmo8wTfxTE",
+          authDomain: "wellnesswise-5e4f7.firebaseapp.com",
+          projectId: "wellnesswise-5e4f7",
+          storageBucket: "wellnesswise-5e4f7.appspot.com",
+          messagingSenderId: "170265322974",
+          appId: "1:170265322974:web:cc7d4addadeb897e6ea94f",
+          measurementId: "G-Z8417YVMXE"
+        };
+      
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+    
+    document.getElementById('ActualLogOut').addEventListener('click', () => {
+    signOut(auth)
+        .then(() => {
+            console.log('Signed out');
+            localStorage.clear();
+            window.location.href = "index.html";  
+        })
+        .catch((error) => {
+            console.error('Error signing out:', error.message);
+        });
+});
+
+</script>
+
+    <footer class="footer" style="bottom: 0;">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2>About Wellness Wise</h2>
+                <p>Wellness Wise is dedicated to helping you achieve your fitness goals with comprehensive tracking, personalized plans, and a supportive community.</p>
+            </div>
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="articles.html">Articles</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="goals.html">Goals</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h2>Contact Us</h2>
+                <p>Email: coconutx453@gmail.com</p>
+                <p><a href="https://www.linkedin.com/in/ali-imran-ab5844290/" style="text-decoration: none;" target="_blank">LinkedIn</a></p>
+                <p><a href="https://github.com/Coconut-X" style="text-decoration: none;" target="_blank">Github</a></p>
+                <p>Phone: +123 456 7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 Wellness Wise. All Rights Reserved.
+        </div>
+    </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            displayProfile();
+        });
+    </script>
+
+    <div style="width: 100%;">
+        <script src="https://widget.trustmary.com/fBvKybU9X"></script>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff; 
+}
+
+
+
+.loginPage, .signupPage {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(3, 3, 3, 0.8);
+    height: 100vh;
+}
+
+.loginPage {
+    visibility: hidden;
+}
+
+.login-container, .signup-container {
+    width: 90%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(2.5px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.login-container h1, .signup-container h1 {
+    margin-bottom: 20px;
+    color: #8B4513;
+}
+
+.login-container form, .signup-container form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"],
+.signup-container input[type="text"],
+.signup-container input[type="password"],
+.submitform,
+.move_signup_login_button 
+{
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0; 
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.8); 
+}
+
+.submitform {
+    background-color: rgba(139, 69, 19, 1);
+    color: white;
+    
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+}
+
+.move_signup_login_button {
+    color: #8B4513;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(3.5px);
+    border: 3px solid #8B4513;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+
+.login-container h2, .signup-container h2 {
+    position: absolute;
+    float: left;
+    left:25px;
+    top:0;
+    color: #fff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-shadow: #fff 0px 0px 10px;
+    cursor: pointer;
+ }
+
+
+.container {
+    display: inline-block;
+    cursor: pointer;
+  }

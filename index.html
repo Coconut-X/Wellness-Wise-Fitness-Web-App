@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellness Wise</title>
+    <link rel="icon" href="logoXXL.png" type="image/x-icon">
+    <link rel="stylesheet" href="index.css">
+    <script src="dashboard.js"></script>
+    <script src="home.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="darkmode.css">
+    <script src="darkmode.js"></script>
+</head>
+<body>
+
+
+    <div class="loginPage">
+        <div class="login-container">
+            <h2 onclick="closeForm()">x</h2>
+            <h1>Log In</h1>
+            <form>
+                <input type="text" name="username" id="loginUsername" placeholder="Username" required>
+                <input type="password" name="password" id="loginPassword" placeholder="Password" required>
+                <input type="button" value="Log In" class="submitform" id="ActualLogIn">
+                <input type="button" value="Sign Up" class="move_signup_login_button" onclick="signup()">
+            </form>
+        </div>
+    </div>
+    <div class="signupPage">
+        <div class="signup-container">
+            <h2 onclick="closeForm()">x</h2>
+            <h1>Sign Up</h1>
+            <form>
+                <input type="text" name="username" id="signupUsername" placeholder="Username" required>
+                <input type="password" name="password" id="signupPassword" placeholder="Password" required>
+                <input type="button" value="Sign Up" class="submitform" id="ActualSignUp">
+                <input type="button" value="Log In" class="move_signup_login_button" onclick="login()">
+            </form>
+        </div>
+    </div>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
+      
+        const firebaseConfig = {
+          apiKey: "AIzaSyD7YKJDT-j70Ai_FKFWMim0Ltmo8wTfxTE",
+          authDomain: "wellnesswise-5e4f7.firebaseapp.com",
+          projectId: "wellnesswise-5e4f7",
+          storageBucket: "wellnesswise-5e4f7.appspot.com",
+          messagingSenderId: "170265322974",
+          appId: "1:170265322974:web:cc7d4addadeb897e6ea94f",
+          measurementId: "G-Z8417YVMXE"
+        };
+      
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        document.getElementById('ActualLogIn').addEventListener('click', () => {
+            const email = document.getElementById('loginUsername').value;
+            const password = document.getElementById('loginPassword').value;
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    console.log('Signed in user:', user);
+                    var username = email.substring(0,email.indexOf('@'));
+                    localStorage.setItem('username', username);
+                    console.log('Username saved to local storage:', username);
+                    //add a pause for 10 seconds
+                   
+                    window.location.href = "home.html";
+
+                })
+                .catch((error) => {
+                    console.error('Error signing in:', error.message);
+                    alert('Error signing in: ' + error.message);
+                });
+
+        });
+
+        document.getElementById('ActualSignUp').addEventListener('click', () => {
+            const email = document.getElementById('signupUsername').value;
+            const password = document.getElementById('signupPassword').value;
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    console.log('Signed up user:', user);
+                    alert('Sign up successful. Please log in.');
+                })
+                .catch((error) => {
+                    console.error('Error signing up:', error.message);
+                    alert('Error signing up: ' + error.message);
+                });
+        });
+
+
+      </script>
+      
+</body>
+</html>
