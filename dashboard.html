@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellness Wise</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="home.css">
+    <script src="dashboard.js"></script>
+    <script src="home.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="icon" href="logoXXL.png" type="image/x-icon">
+    <link rel="stylesheet" href="darkmode.css">
+    <script src="darkmode.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+</head>
+
+<script src="https://widget.cxgenie.ai/widget.js" data-aid="39e5e315-d696-4bec-919f-a166b3516cf0" data-lang="en"></script>
+
+<body>
+
+   
+    <nav class="navbar">
+        <div class="navbar-item" class="homelink"><a href="home.html" class="homelink">Wellness Wise</a></div>
+        <div class="navbar-links">
+            <a href="articles.html" class="navbar-link" id="articles">Articles</a>
+            <a href="dashboard.html" class="navbar-link" id="dashboard">Dashboard</a>
+            <a href="goals.html" class="navbar-link" id="goals">Goals</a>
+        </div>
+        <div class="dark-mode-toggle" id="dark-mode-toggle">
+            <span class="material-symbols-outlined" onclick="contrast()">contrast</span>
+        </div>
+        <div class="profile-icon">
+            <a class="material-symbols-outlined" style="text-decoration: none;" href="profile.html">account_circle</a>
+        </div>
+    </nav>
+    
+    <nav class="mininav">
+        <ul style="background-color: black;" class="menuicon"> 
+            <li class="container" onclick="myFunction(this)">
+                <div class="bar1" style="margin-top: 10px;"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </li>
+            <li class="dark-mode-toggle" id="dark-mode-toggle">
+                <span class="material-symbols-outlined" onclick="contrast()">contrast</span>
+            </li>
+        </ul>
+
+        <ul class="minimenu">        
+            <li><a href="home.html" class="menulist">Home</a></li>
+            <li><a href="articles.html" class="menulist">Articles</a></li>
+            <li><a href="dashboard.html" class="menulist">Dashboard</a></li>
+            <li><a href="goals.html" class="menulist">Goals</a></li>
+            <li><a href="profile.html" class="menulist">Profile</a></li>
+
+        </ul>
+    </nav>
+    
+   
+    <div class="infoinputform"> 
+        <form class="form1" id="infoForm">
+            <h2 style="position: absolute; top:0; left:12px; color: #fff;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+             text-shadow: #fff 0px 0px 10px; cursor: pointer;" onclick="hideForm()">x</h2>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="10" max="100" required><br>
+            <label for="height">Height(cm):</label>
+            <input type="number" id="height" name="height" min="100" step="0.01" required><br>
+            <label for="weight">Weight(kg):</label>
+            <input type="number" id="weight" name="weight" min="20" step="0.1" required><br>
+            <label for="gender"  >Gender</label>
+            <select id="gender" name="gender" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select><br>
+
+
+            <label for="bodyTypeGoal">Fitness Goal: </label>
+            <select id="bodyTypeGoal" name="bodyTypeGoal" required>
+                <option value="sporty">Sporty</option>
+                <option value="muscle_gain">Muscle Gain</option>
+                <option value="weight_loss">Weight Loss</option>
+                <option value="toned">Toned</option>
+                <option value="endurance">Endurance</option>
+                <option value="balanced">Balanced</option>
+                <option value="vegan">Vegan</option>
+                <option value="ectomorph">Ectomorph</option>
+                <option value="endomorph">Endomorph</option>
+                <option value="mesomorph">Mesomorph</option>
+            </select><br><br>
+            <input type="submit" value="Submit" onclick="submitForm()">
+        </form>
+    </div>
+
+    <div class="dashboardHome">
+        <div class="navbar-space"></div>
+
+        <div class="dashboard-container" id="abcd">
+            
+            <div class="item item-1">
+                <h1>Current Week Streak</h1>
+                <div class="image-container">
+                    <img src="fire.png" alt="Streak" class="streak-image">
+                    <img src="fire.png" alt="Streak" class="streak-image">
+                    <img src="fire.png" alt="Streak" class="streak-image">
+                    <img src="Cropped_Image3.png" alt="Streak" class="streak-image">
+                    <img src="Cropped_Image3.png" alt="Streak" class="streak-image">
+                    <img src="Cropped_Image3.png" alt="Streak" class="streak-image">
+                    <img src="Cropped_Image3.png" alt="Streak" class="streak-image">
+                </div>
+               
+                <div class="bmr">
+
+                    <div class="aa">
+                        <h5 class="steps">Total Steps: </h5>
+                        <div class="progress-container">
+                            <span id="steps-value">15000/35000</span>
+                            <progress id="steps" value="15000" max="35000"></progress>
+                        </div>
+
+                        <button class="addstep" onclick="updateSteps()">+Steps</button>
+                        <input type="number" id="steps-input" placeholder="Enter steps" min="0" required>
+                    </div>
+
+                    <h5 class="bmrvalue">Basal Metabolic Rate: </h5>
+                </div>
+                
+                <div class="updateInfo" onclick="showForm()">
+                    <button id="updateInfo">Update Info</button>
+                </div>
+            </div>
+            
+            <div class="item item-2">
+                <h1>Recommended Diet</h1>
+                <div id="food-list">
+                    <ul>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="item item-3">
+                <div>
+                    <h1>Expert Advice</h1>
+                </div>
+               
+                <div style=" display: flex;">
+                    <img src="expert1.jpg" alt="expert" style="width: 60%; border-radius: 10px; float: left; margin-bottom: 5px; margin-left: 5px; box-shadow: inset 0px 3px 3px rgba(0, 0, 0, 1), inset 0 -3px 3px rgba(255, 255, 255, 0.2);">
+                    <a href="https://www.example.com">
+                        <img src="externallink.png" alt="Description of the image" width="5%" style="position: absolute; transform: translate(-25px,4px);" >
+                    </a>
+                        <p style="float: right; text-align: justify; margin: 3px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: #c09807;">Our expert nutritionists recommend a balanced diet with a mix of proteins, carbs, and fats to help you achieve your fitness goals.</p>
+                </div>
+            </div>
+
+            <div class="item item-4">
+                <h1>Workout</h1>
+                <ul></ul>
+            </div>
+            <div class="item item-5">
+                <h1>BMI</h1>
+                <div style="height: 5px;"></div>
+                <progress id="bmi" value="0" min="0" max="40"></progress>
+            </div>
+            
+        </div>
+
+      
+        <div style="width: 100%; height: 80px;"></div>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h2>About Wellness Wise</h2>
+                    <p>Wellness Wise is dedicated to helping you achieve your fitness goals with comprehensive tracking, personalized plans, and a supportive community.</p>
+                </div>
+                <div class="footer-section links">
+                    <h2>Quick Links</h2>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="articles.html">Articles</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="goals.html">Goals</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h2>Contact Us</h2>
+                    <p>Email: coconutx453@gmail.com</p>
+                    <p><a href="https://www.linkedin.com/in/ali-imran-ab5844290/" style="text-decoration: none; " target="_blank">LinkedIn</a></p>
+                    <p><a href="https://github.com/Coconut-X" style="text-decoration: none;" target="_blank">Github</a></p>
+                    <p>Phone: +123 456 7890</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 Wellness Wise. All Rights Reserved.
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        retrieveData();
+    </script>
+   
+</body>
+</html>

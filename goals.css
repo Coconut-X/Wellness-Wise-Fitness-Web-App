@@ -1,0 +1,171 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+
+}
+
+body {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    
+}
+
+ .navbar, .mininav {
+    color: white; 
+}
+
+.goals-container {
+    margin-top: 5rem;
+    text-align: center;
+    color: white;
+}
+
+.dark-mode .goals-container {
+    color: #f0f0f0;
+}
+
+.mininav{
+    visibility: hidden;
+    position: fixed;
+    top:0;
+    z-index: 1000; 
+    width: 100%; 
+    color: rgb(144, 112, 58);
+    background-color: rgb(82, 48, 24);
+}
+
+.navbar-space {
+   height: 60px;
+}
+
+.homelink{
+    color: #adf802;
+}
+
+#goalspage{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.goals-container {
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#goalInput {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #8B4513;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#addGoalButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #8B4513;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#addGoalButton:hover {
+    background-color: #ff6f61;
+}
+
+#goalsList {
+    list-style-type: none;
+    padding: 0;
+}
+
+.goal-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #fff8dc;
+    border: 1px solid #8B4513;
+    border-radius: 5px;
+}
+
+.goal-item .delete-button {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.goal-item .delete-button:hover {
+    background-color: #8B4513;
+}
+
+.goal-item .checkbox {
+    margin-right: 10px;
+}
+
+.dark-mode .goals-container {
+    color: #f0f0f0;
+}
+
+.dark-mode .goal-item {
+    background-color: #444;
+    border: 1px solid #777;
+}
+
+.dark-mode #goalInput {
+    background-color: #555;
+    color: #f0f0f0;
+    border: 2px solid #777;
+}
+
+.dark-mode #addGoalButton {
+    background-color: #777;
+    color: #f0f0f0;
+}
+
+.dark-mode #addGoalButton:hover {
+    background-color: #999;
+}
+
+
+#a, #b, #c, #d{
+    background-color: #fff8dc;
+    color: rgb(144, 112, 58);
+}
+
+#a:hover {
+    background-color: #8B4513;
+    color: #fff8dc;
+}
+#b:hover {
+    background-color: #8B4513;
+    color: #fff8dc;
+}
+#c:hover {
+    background-color: #8B4513;
+    color: #fff8dc;
+}
+#d:hover {
+    background-color: #8B4513;
+    color: #fff8dc;
+}

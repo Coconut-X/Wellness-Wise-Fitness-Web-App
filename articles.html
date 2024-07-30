@@ -1,0 +1,320 @@
+<!--this is articles.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellness Wise</title>
+    <link rel="stylesheet" href="articles.css">
+    <link rel="stylesheet" href="home.css">
+    <script src="home.js">      </script>
+    <script src="articles.js">  </script>
+    <link rel="icon" href="logoXXL.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="darkmode.css">
+    <script src="darkmode.js"></script>
+
+</head>
+
+<script src="https://widget.cxgenie.ai/widget.js" data-aid="39e5e315-d696-4bec-919f-a166b3516cf0" data-lang="en"></script>
+
+
+<body style="background-color: #ffffff;">
+
+    
+
+
+ <nav class="navbar">
+    <div class="navbar-item" class="homelink"><a href="home.html" class="homelink">Wellness Wise</a></div>
+    <div class="navbar-links">
+        <a href="articles.html" class="navbar-link" id="articles">Articles</a>
+        <a href="dashboard.html" class="navbar-link" id="dashboard">Dashboard</a>
+        <a href="goals.html" class="navbar-link" id="goals">Goals</a>
+    </div>
+    <div class="dark-mode-toggle" id="dark-mode-toggle" >
+        <span class="material-symbols-outlined" onclick="contrast()">contrast</span>
+    </div>
+    <div class="profile-icon">
+        <a class="material-symbols-outlined" style="text-decoration: none; color: white;" href="profile.html">account_circle</a>
+    </div>
+</nav>
+    
+    <nav class="mininav" >
+        <ul style="background-color: black;" class="menuicon"> 
+            <li class="container" onclick="myFunction(this)">
+                <div class="bar1" style="margin-top: 10px;"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </li>
+            <li class="dark-mode-toggle" id="dark-mode-toggle">
+                <span class="material-symbols-outlined" onclick="darkMode()">contrast</span>
+            </li>
+        </ul>
+
+        <ul class="minimenu" >        
+            <li style="color: rgb(144, 112, 58); " class="a"><a href="home.html" class="menulist"   id="a" >Home</a></li>
+            <li style="color: rgb(144, 112, 58); " class="a"><a href="articles.html" class="menulist"   id="b">Articles</a></li>
+            <li style="color: rgb(144, 112, 58); " class="a"> <a href="dashboard.html" class="menulist"   id="c">Dashboard</a></li>
+            <li style="color: rgb(144, 112, 58); " class="a"><a href="goals.html" class="menulist"  id="d">Goals</a></li> 
+            <li style="color: rgb(144, 112, 58); " class="a"><a href="profile.html" class="menulist"  id="d">Profile</a></li> 
+            
+        </ul>
+    </nav>
+    
+
+
+    <div id="articlespage">
+        <div class="navbar-space"></div>
+
+
+        <input type="text" id="search-bar" placeholder="Search articles..." onkeyup="searchArticles()">
+        <div class="container">
+            <ul id="list">
+                <li class="article" onclick="scrollToSection('nutrition-eating-habits')">Healthy Eating Habits</li>
+                <li class="article" onclick="scrollToSection('nutrition-meal-plans')">Meal Plans</li>
+                <li class="article" onclick="scrollToSection('nutrition-advice')">Nutritional Advice</li>
+                <li class="article" onclick="scrollToSection('workout-strength-training')">Strength Training</li>
+                <li class="article" onclick="scrollToSection('workout-cardio-exercises')">Cardio Exercises</li>
+                <li class="article" onclick="scrollToSection('workout-flexibility-exercises')">Flexibility Exercises</li>  
+                <li class="article" onclick="scrollToSection('mental-health-stress-management')">Stress Management</li>
+                <li class="article" onclick="scrollToSection('mental-health-mindfulness')">Mindfulness Practices</li>
+                <li class="article" onclick="scrollToSection('mental-health-tips')">Mental Health Tips</li>
+                <li class="article" onclick="scrollToSection('beginners-workout-guides')">Beginner Workout Guides</li>
+                <li class="article" onclick="scrollToSection('beginners-fitness-tips')">Fitness Tips for Beginners</li>
+                <li class="article" onclick="scrollToSection('beginners-fitness-journey')">Starting Your Fitness Journey</li>
+                <li class="article" onclick="scrollToSection('advanced-strength-training')">Advanced Strength Training</li>
+                <li class="article" onclick="scrollToSection('advanced-hiit')">High-Intensity Interval Training (HIIT)</li>
+                <li class="article" onclick="scrollToSection('advanced-crossfit')">CrossFit Training</li>
+                <li class="article" onclick="scrollToSection('home-effective-workouts')">Effective Home Workouts</li>
+                <li class="article" onclick="scrollToSection('home-no-equipment')">No-Equipment Exercises</li>
+                <li class="article" onclick="scrollToSection('home-fitness-routines')">Home Fitness Routines</li>
+                <li class="article" onclick="scrollToSection('gadgets-trackers')">Best Fitness Trackers</li>
+                <li class="article" onclick="scrollToSection('gadgets-smartwatches')">Smartwatches for Fitness</li>
+                <li class="article" onclick="scrollToSection('gadgets-tech-tools')">Tech Tools for Exercise</li>
+                <li class="article" onclick="scrollToSection('yoga-beginners-poses')">Yoga Poses for Beginners</li>
+                <li class="article" onclick="scrollToSection('yoga-meditation-techniques')">Meditation Techniques</li>
+                <li class="article" onclick="scrollToSection('yoga-benefits')">Benefits of Yoga</li>
+                <li class="article" onclick="scrollToSection('stories-inspiring')">Inspiring Fitness Stories</li>
+                <li class="article" onclick="scrollToSection('stories-weight-loss')">Weight Loss Transformations</li>
+                <li class="article" onclick="scrollToSection('stories-fitness-journey')">Fitness Journey Successes</li>
+                <li class="article" onclick="scrollToSection('injury-prevention')">Preventing Workout Injuries</li>
+                <li class="article" onclick="scrollToSection('injury-recovery-tips')">Recovery Tips</li>
+                <li class="article" onclick="scrollToSection('injury-rehabilitation')">Rehabilitation Exercises</li>
+                <li class="article" onclick="scrollToSection('challenges-30-day')">30-Day Fitness Challenges</li>
+                <li class="article" onclick="scrollToSection('challenges-competitions')">Fitness Competitions</li>
+                <li class="article" onclick="scrollToSection('challenges-motivational')">Motivational Challenges</li>
+                <li class="article" onclick="scrollToSection('sports-outdoor-ideas')">Outdoor Fitness Ideas</li>
+                <li class="article" onclick="scrollToSection('sports-benefits')">Benefits of Sports</li>
+                <li class="article" onclick="scrollToSection('sports-seasonal')">Seasonal Outdoor Activities</li>
+                <li class="article" onclick="scrollToSection('sleep-importance')">Importance of Sleep</li>
+                <li class="article" onclick="scrollToSection('sleep-recovery-strategies')">Recovery Strategies</li>
+                <li class="article" onclick="scrollToSection('sleep-fitness')">Sleep and Fitness</li>
+                <li class="article" onclick="scrollToSection('myths-common')">Common Fitness Myths</li>
+                <li class="article" onclick="scrollToSection('myths-debunking')">Debunking Fitness Misconceptions</li>
+                <li class="article" onclick="scrollToSection('myths-facts')">Fitness Facts</li>
+                <li class="article" onclick="scrollToSection('recipes-breakfast')">Healthy Breakfast Recipes</li>
+                <li class="article" onclick="scrollToSection('recipes-lunch')">Nutritious Lunch Ideas</li>
+                <li class="article" onclick="scrollToSection('recipes-dinner')">Healthy Dinner Options</li>
+                
+
+
+            </ul>
+        </div>
+
+        <div class="dropdown"> 
+            <h1 id="nutrition-diet-heading" >Nutrition and Diet</h1>
+            <div class="dropdown-content">
+                <a id="nutrition-eating-habits" href="https://www.who.int/initiatives/behealthy/healthy-diet">Healthy Eating Habits</a>
+                <a id="nutrition-meal-plans" href="https://www.muscleandfitness.com/nutrition/healthy-eating/28-days-meal-plan-lean-muscle/">Meal Plans</a>
+                <a id="nutrition-advice" href="https://www.foodstandards.gov.scot/consumers/healthy-eating/nutrition">Nutritional Advice</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <h1 id="workout-routines-heading" >Workout Routines</h1>
+            <div class="dropdown-content">
+                <a id="workout-strength-training" href="https://www.muscleandstrength.com/workouts/8-week-super-strength-workout">Strength Training</a>
+                <a id="workout-cardio-exercises" href="https://www.medicalnewstoday.com/articles/cardio-exercises-at-home">Cardio Exercises</a>
+                <a id="workout-flexibility-exercises" href="https://www.webmd.com/fitness-exercise/ss/slideshow-stretches-to-get-loose">Flexibility Exercises</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <h1 id="mental-health-heading">Mental Health and Wellness</h1>
+            <div class="dropdown-content">
+                <a id="mental-health-stress-management" href="https://www.mayoclinic.org/healthy-lifestyle/stress-management/in-depth/exercise-and-stress/art-20044469">Stress Management</a>
+                <a id="mental-health-mindfulness" href="https://www.mindful.org/take-a-mindful-moment-5-simple-practices-for-daily-life/">Mindfulness Practices</a>
+                <a id="mental-health-tips" href="https://www.mentalhealth.org.uk/explore-mental-health/publications/our-best-mental-health-tips">Mental Health Tips</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <h1 id="beginners-heading">Fitness for Beginners</h1>
+            <div class="dropdown-content">
+                <a id="beginners-workout-guides" href="https://www.healthline.com/nutrition/how-to-start-exercising#A-few-tips-for-beginners">Beginner Workout Guides</a>
+                <a id="beginners-fitness-tips" href="https://havenlife.com/blog/fitness-tips-for-beginners/">Fitness Tips for Beginners</a>
+                <a id="beginners-fitness-journey" href="https://www.testsportsclubs.com/10-steps-to-starting-your-fitness-journey">Starting Your Fitness Journey</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <h1 id="advanced-training-heading">Advanced Training Techniques</h1>
+            <div class="dropdown-content">
+                <a id="advanced-strength-training" href="https://www.muscleandfitness.com/workouts/workout-tips/the-ultimate-guide-to-advanced-training-techniques-for-all-experience-levels/">Advanced Strength Training</a>
+                <a id="advanced-hiit" href="https://www.webmd.com/fitness-exercise/a-z/high-intensity-interval-training-hiit">High-Intensity Interval Training (HIIT)</a>
+                <a id="advanced-crossfit" href="https://www.crossfit.com/essentials/what-is-a-crossfit-workout">CrossFit Training</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <h1 id="home-workouts-heading">Home Workouts</h1>
+            <div class="dropdown-content">
+                <a id="home-effective-workouts" href="#">Effective Home Workouts</a>
+                <a id="home-no-equipment" href="https://www.nerdfitness.com/blog/the-7-best-at-home-workout-routines-the-ultimate-guide-for-training-without-a-gym/">No-Equipment Exercises</a>
+                <a id="home-fitness-routines" href="https://www.webmd.com/fitness-exercise/features/home-workout-equipment-need">Home Fitness Routines</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <h1 id="gadgets-technology-heading">Fitness Gadgets and Technology</h1>
+            <div class="dropdown-content">
+                <a id="gadgets-trackers" href="https://www.theverge.com/22985108/best-fitness-tracker">Best Fitness Trackers</a>
+                <a id="gadgets-smartwatches" href="https://www.garmin.com/en-US/c/sports-fitness/activity-fitness-trackers/">Smartwatches for Fitness</a>
+                <a id="gadgets-tech-tools" href="https://www.legendfitness.com/2017/08/5-tech-tools-to-help-you-work-out-smarter/">Tech Tools for Exercise</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <h1 id="yoga-meditation-heading">Yoga and Meditation</h1>
+            <div class="dropdown-content">
+                <a id="yoga-beginners-poses" href="https://www.verywellfit.com/essential-yoga-poses-for-beginners-3566747">Yoga Poses for Beginners</a>
+                <a id="yoga-meditation-techniques" href="https://www.innerpeacefellowship.org/how-to-meditate/?gad_source=1&gclid=CjwKCAjw1920BhA3EiwAJT3lSTITvY7RzCtiEn38w92e285B5jGP35vnYYklcf_lcX41SJjoRc-rpRoCGCwQAvD_BwE">Meditation Techniques</a>
+                <a id="yoga-benefits" href="https://www.healthline.com/nutrition/13-benefits-of-yoga">Benefits of Yoga</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <h1 id="stories-transformations-heading">Personal Stories and Transformations</h1>
+            <div class="dropdown-content">
+                <a id="stories-inspiring" href="https://www.thebodycoach.com/blog/lanas-inspiring-story/">Inspiring Fitness Stories</a>
+                <a id="stories-weight-loss" href="https://people.com/health/incredible-weight-loss-transformation-photos/">Weight Loss Transformations</a>
+                <a id="stories-fitness-journey" href="https://inspirefitnessonline.com/success-stories/">Fitness Journey Successes</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <h1 id="injury-prevention-heading">Injury Prevention and Recovery</h1>
+            <div class="dropdown-content">
+                <a id="injury-prevention" href="https://www.concentra.com/resource-center/articles/10-tips-to-prevent-workplace-injuries/">Preventing Workout Injuries</a>
+                <a id="injury-recovery-tips" href="https://www.muscleandfitness.com/workouts/workout-tips/8-common-workout-injuries-and-how-heal-them/">Recovery Tips</a>
+                <a id="injury-rehabilitation" href="https://www.fitsw.com/blog/best-exercise-types-for-injury-recovery-and-rehabilitation/">Rehabilitation Exercises</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <h1 id="fitness-challenges-heading">Fitness Challenges</h1>
+            <div class="dropdown-content">
+                <a id="challenges-30-day" href="https://www.joyfulhealthyeats.com/full-body-30-day-workout-challenge/">30-Day Fitness Challenges</a>
+                <a id="challenges-competitions" href="https://getdryrub.com/blogs/news/fitness-competitions-break-out-comfort-zone">Fitness Competitions</a>
+                <a id="challenges-motivational" href="https://wellhub.com/en-us/blog/improving-retention/motivating-fitness-challenge-ideas/">Motivational Challenges</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <h1 id="sports-outdoor-heading">Sports and Outdoor Activities</h1>
+            <div class="dropdown-content">
+                <a id="sports-outdoor-ideas" href="https://www.shape.com/fitness/workouts/10-new-outdoor-workout-ideas">Outdoor Fitness Ideas</a>
+                <a id="sports-benefits" href="https://projectplay.org/youth-sports/facts/benefits">Benefits of Sports</a>
+                <a id="sports-seasonal" href="https://www.nrpa.org/publications-research/park-pulse/outdoor-activities-for-all-this-spring-and-summer/">Seasonal Outdoor Activities</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <h1 id="sleep-recovery-heading">Sleep and Recovery</h1>
+            <div class="dropdown-content">
+                <a id="sleep-importance" href="https://www.medicalnewstoday.com/articles/325353">Importance of Sleep</a>
+                <a id="sleep-recovery-strategies" href="https://blog.nasm.org/exercise-programming/the-importance-of-sleep-and-recovery">Recovery Strategies</a>
+                <a id="sleep-fitness" href="https://www.everydayhealth.com/fitness/intimate-relationship-between-fitness-sleep/">Sleep and Fitness</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <h1 id="fitness-myths-heading">Fitness Myths and Facts</h1>
+            <div class="dropdown-content">
+                <a id="myths-common" href="https://integrehab.com/blog/health-wellness/common-fitness-myths/">Common Fitness Myths</a>
+                <a id="myths-debunking" href="https://www.mayoclinichealthsystem.org/hometown-health/speaking-of-health/top-10-workout-myths">Debunking Fitness Misconceptions</a>
+                <a id="myths-facts" href="https://dosomething.org/article/11-facts-about-fitness">Fitness Facts</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <h1 id="healthy-recipes-heading">Healthy Recipes</h1>
+            <div class="dropdown-content">
+                <a id="recipes-breakfast" href="https://www.nhs.uk/healthier-families/recipes/breakfast/">Healthy Breakfast Recipes</a>
+                <a id="recipes-lunch" href="https://www.jamieoliver.com/recipes/category/course/healthy-lunch-ideas/">Nutritious Lunch Ideas</a>
+                <a id="recipes-dinner" href="https://www.healthline.com/nutrition/simple-dinner-ideas">Healthy Dinner Options</a>
+            </div>
+        </div>
+
+
+
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h2>About Wellness Wise</h2>
+                    <p>Wellness Wise is dedicated to helping you achieve your fitness goals with comprehensive tracking, personalized plans, and a supportive community.</p>
+                </div>
+                <div class="footer-section links">
+                    <h2>Quick Links</h2>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="articles.html">Articles</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="goals.html">Goals</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h2>Contact Us</h2>
+                    <p>Email: coconutx453@gmail.com</p>
+                    <p><a href="https://www.linkedin.com/in/ali-imran-ab5844290/" style="text-decoration: none;" target="_blank">LinkedIn</a></p>
+                    <p><a href="https://github.com/Coconut-X" style="text-decoration: none;" target="_blank">Github</a></p>
+                    <p>Phone: +123 456 7890</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 Wellness Wise. All Rights Reserved.
+            </div>
+        </footer>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var links = document.querySelectorAll('.dropdown-content a');
+            links.forEach(function(link) {
+                link.setAttribute('target', '_blank');
+            });
+        });
+    </script>
+        
+        <script>
+
+            var searchBar = document.getElementById('search-bar');
+            searchBar.addEventListener('blur', function() {
+                setTimeout(function() {
+                    document.getElementById('list').style.display = 'none';
+                }, 100); // delay to allow click events to fire
+            });
+
+
+
+            document.addEventListener('DOMContentLoaded', function() {
+                let articles = document.querySelectorAll('#list .article');
+                articles.forEach(article => article.style.display = 'none');
+            });
+        </script>
+    
+</body>
+</html>
