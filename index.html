@@ -59,42 +59,50 @@
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
 
-        document.getElementById('ActualLogIn').addEventListener('click', () => {
-            const email = document.getElementById('loginUsername').value;
-            const password = document.getElementById('loginPassword').value;
-            signInWithEmailAndPassword(auth, email, password)
-                .then((userCredential) => {
-                    const user = userCredential.user;
-                    console.log('Signed in user:', user);
-                    var username = email.substring(0,email.indexOf('@'));
-                    localStorage.setItem('username', username);
-                    console.log('Username saved to local storage:', username);
-                    //add a pause for 10 seconds
-                   
-                    window.location.href = "home.html";
-
-                })
-                .catch((error) => {
-                    console.error('Error signing in:', error.message);
-                    alert('Error signing in: ' + error.message);
-                });
-
+       document.getElementById('ActualLogIn').addEventListener('click', () => {
+    const email = document.getElementById('loginUsername').value;
+    const password = document.getElementById('loginPassword').value;
+    signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            const user = userCredential.user;
+            console.log('Signed in user:', user);
+            var username = email.substring(0, email.indexOf('@'));
+            localStorage.setItem('username', username);
+            console.log('Username saved to local storage:', username);
+            window.location.href = "home.html";
+        })
+        .catch((error) => {
+            console.error('Error signing in:', error.code, error.message);
+            alert('Error signing in: ' + error.message);
         });
+});
 
-        document.getElementById('ActualSignUp').addEventListener('click', () => {
-            const email = document.getElementById('signupUsername').value;
-            const password = document.getElementById('signupPassword').value;
-            createUserWithEmailAndPassword(auth, email, password)
-                .then((userCredential) => {
-                    const user = userCredential.user;
-                    console.log('Signed up user:', user);
-                    alert('Sign up successful. Please log in.');
-                })
-                .catch((error) => {
-                    console.error('Error signing up:', error.message);
-                    alert('Error signing up: ' + error.message);
-                });
+document.getElementById('ActualSignUp').addEventListener('click', () => {
+    const email = document.getElementById('signupUsername').value;
+    const password = document.getElementById('signupPassword').value;
+    createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            const user = userCredential.user;
+            console.log('Signed up user:', user);
+            alert('Sign up successful. Please log in.');
+        })
+        .catch((error) => {
+            console.error('Error signing up:', error.code, error.message);
+            alert('Error signing up: ' + error.message);
         });
+});
+
+
+
+        onAuthStateChanged(auth, (user) => {
+    if (user) {
+        // User is signed in
+        console.log('User is signed in:', user);
+    } else {
+        // User is signed out
+        console.log('User is signed out');
+    }
+});
 
 
       </script>
